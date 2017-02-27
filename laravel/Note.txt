@@ -1,0 +1,14 @@
+1,命名空间
+autoload:classmap,file,PSR-0,PSR-4
+抛弃了传统的文件包含方法，不用在每个脚本开头写一个长长的包含(require, include)文件列表（每个类一个文件）
+composer dump-autoload
+/vendor/composer/autoload_classmap.php
+'App\\controllers\\TestController' => $baseDir . '/app/controllers/TestController.php'
+
+2,Controller 中Request依赖注入
+IOC，DI   ?????
+
+3,使用laravel Auth 存储密码要用Hash::make()
+
+4，\vendor\lucadegasperi\oauth2-server-laravel\src\config\oauth2.php  OAuth配置
+
