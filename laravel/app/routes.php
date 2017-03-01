@@ -11,10 +11,15 @@
 |
 */
 
-Route::get('/', function()
+/*Route::secure('GET', '/', function (){
+    return View::make('hello');
+});*/
+
+
+/*Route::get('/', array('https'=>true,function()
 {
-	return View::make('hello');
-});
+    return View::make('hello');
+}));*/
 
 Route::any('register','TestController@getRegister');
 Route::get('usersList','TestController@getList');

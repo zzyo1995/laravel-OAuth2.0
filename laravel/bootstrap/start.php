@@ -60,6 +60,10 @@ $framework = $app['path.base'].
 require $framework.'/Illuminate/Foundation/start.php';
 
 
+// add IoC Require
+require $app['path.base'].'/app/ioc.php';
+
+
 
 /*App:bind('Request', function ($app){
     return new \Illuminate\Http\Request();

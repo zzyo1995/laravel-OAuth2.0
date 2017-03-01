@@ -14,6 +14,10 @@
 App::before(function($request)
 {
 	//
+/*    if(!Request::secure())
+    {
+        return Redirect::secure(Request::path());
+    }*/
 });
 
 
@@ -36,8 +40,7 @@ App::after(function($request, $response)
 Route::filter('auth', function()
 {
     if (Auth::guest()) {
-        Session::put('auth',0);
-        return Redirect::guest('login');//如果用户未登录，则重定向到login路由
+        return Redirect::guest('login');
     }
     else{
     }
