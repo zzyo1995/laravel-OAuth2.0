@@ -1,0 +1,9 @@
+api_info:
+method：API请求方法，GET POST
+url：API URL
+name：API名称
+description：API描述
+params：API参数
+success_response：成功返回结果示例
+fail_response：失败返回结果示例
+group：分组

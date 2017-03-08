@@ -57,7 +57,7 @@ function add_header(cnt, name, value) {
 var param_cnt = 0;
 $("#add_url_parameter").click(function () {
     param_cnt++;
-    add_parameter(param_cnt, '', '')
+    add_parameter(param_cnt, '', '');
     raw_param_flag--;
 });
 
@@ -109,12 +109,13 @@ function get_all_headers() {
     return JSON.stringify(headers);
 }
 
-$('#send').click(function () {
+$('#sendApi').click(function () {
+
+    var api_name = $('#api_name').val();
     var http_method = $('#http_method').val();
     var api_url = $('#api_url').val();
     var params = get_all_params();
     //alert(params.toString());
-    var headers = get_all_headers();
     var result_text = null;
     $.post('/send', {
         url: api_url,
@@ -126,7 +127,64 @@ $('#send').click(function () {
         $('#response_header').val(data['header']);
         $('#response_body').val(data['body']);
     })
+});
 
+$('#saveApi').click(function () {
+    var group_id = $('#group_id').val();
+    var api_name = $('#api_name').val();
+    var http_method = $('#http_method').val();
+    var api_url = $('#api_url').val();
+    var response_success = $('#response_success').val();
+    var response_failed = $('#response_failed').val();
+    var params = get_all_params();
+    //alert(api_name+" "+http_method+" "+api_url+" "+params+" "+response_success+" "+response_failed);
+    $.post('/api-manage/addApi', {
+        group_id:group_id,
+        name:api_name,
+        url: api_url,
+        method: http_method,
+        params: params,
+        success_response: response_success,
+        fail_response: response_failed
+    },function (data) {
+        window.location="/api-manage";
+    })
+});
 
+$('#deleteApi').click(function () {
+    var api_id = $('#api_id').val();
+    //alert(api_id);
+    $.post('/aaaaaa', {
+        id: api_id,
+        method: http_method,
+        params: params
+    }, function (data) {
+
+    },function (data) {
+        alert(data);
+    })
+});
+$('#updateApi').click(function () {
+    var api_id = $('#api_id').val();
+    var api_name = $('#api_name').val();
+    var http_method = $('#http_method').val();
+    var api_url = $('#api_url').val();
+    var response_success = $('#response_success').val();
+    var response_failed = $('#response_failed').val();
+    var params = get_all_params();
+    //alert(api_id+" "+api_name+" "+http_method+" "+api_url+" "+params+" "+response_success+" "+response_failed);
+    $.post('/aaaaaa', {
+        id: api_id,
+        name:api_name,
+        url: api_url,
+        method: http_method,
+        params: params,
+        succ_res: response_success,
+        fail_res: response_failed
+    }, function (data) {
+
+    },function (data) {
+        alert(data);
+    })
 });
 /* js for http simulator end */
