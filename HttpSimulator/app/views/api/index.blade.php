@@ -43,15 +43,15 @@
                             <td>{{$api->url}}</td>
                             <td>
                                 @if($admin)
-                                    <a href="api-manage/manage?api_id={{ $api->id }}" class="btn btn-primary active"
+                                    <a href="/api-manage/manage?api_id={{ $api->id }}" class="btn btn-primary active"
                                        role="button">管理</a>
                                 @else
-                                    <a href="api-manage/info?api_id={{ $api->id }}" class="btn btn-primary active"
+                                    <a href="/api-manage/info?api_id={{ $api->id }}" class="btn btn-primary active"
                                        role="button">详情</a>
                                 @endif
                             </td>
                             <td>
-                                <a href="api-manage/test?api_id={{ $api->id }}" class="btn btn-primary active"
+                                <a href="/api-manage/test?api_id={{ $api->id }}" class="btn btn-primary active"
                                    role="button">测试</a>
                             </td>
                         </tr>
@@ -60,7 +60,7 @@
                 </table>
                 @if($admin)
                     <div align="right">
-                        <a href="api-manage/addApi" class="btn btn-primary active" role="button">新建接口</a>
+                        <a href="/api-manage/addApi" class="btn btn-primary active" role="button">新建接口</a>
                     </div>
                 @endif
             </div>
