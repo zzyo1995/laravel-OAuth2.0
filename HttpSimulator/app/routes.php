@@ -24,10 +24,17 @@ Route::get('/api-manage','ApiManagerController@getListByID');
 
 Route::any('/api-manage/addApi', 'ApiManagerController@addApi');
 
+Route::any('/api-manage/updateApi', 'ApiManagerController@updateApi');
+
+Route::any('/api-manage/deleteApi', 'ApiManagerController@deleteApi');
+
 Route::any('/api-manage/addGroup', 'ApiManagerController@addGroup');
 
-Route::get('/api-manage/manage', 'ApiManagerController@manageApi');
+Route::any('/api-manage/manage', 'ApiManagerController@manageApi');
 
 Route::get('/api-manage/info', 'ApiManagerController@getApiInfo');
 
-Route::get('/api-manage/test', 'ApiManagerController@apiTest');
+Route::any('/api-manage/test', 'ApiManagerController@apiTest');
+
+
+
