@@ -1,0 +1,8 @@
+问题描述：admin用户无法更新自己的资料，其他用户可以。
+
+原因：由于数据库中有两个用户的username都是admin，所以不能更改。
+
+解决：修改了其中一个用户的username。
+
+建议：将users表里面的username列设成unique。
+	

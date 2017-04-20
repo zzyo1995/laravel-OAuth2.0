@@ -1,0 +1,57 @@
+.add_user_input{
+	width: 320px;
+	margin-top: 7px;
+	padding: 0px 5px;
+	height: 32px;
+	border: 1px solid #CBD0D6;
+}
+
+.add_user_a{
+	display: inline-block;
+	margin-left: -5px;
+	height: 34px;
+	line-height: 34px;
+	width: 97px;
+	color: #FFF;
+	text-align: center;
+	vertical-align: bottom;
+	background: none repeat scroll 0px 0px #47A447;
+	font-size: 16px;
+	cursor: pointer;
+	border:none;
+}
+
+.add_user_ul {
+	display:table;
+	margin-top:20px;
+}
+
+.add_user_ul li{
+	display: block;
+	width: 280px;
+	height: 100px;
+	padding: 20px;
+	margin: 20px 42px;
+	float: left;
+	border: 1px solid #F2F2F2;
+	cursor: pointer;
+	position: relative;
+	list-style: outside none none;
+
+}
+
+.add_user_ul li button{
+	position: absolute;
+	top: 12px;
+	right: 10px;
+	height: 26px;
+	width: 60px;
+	line-height: 20px;
+	padding: 0px 6px;
+	text-decoration: none;
+	cursor: pointer;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+
